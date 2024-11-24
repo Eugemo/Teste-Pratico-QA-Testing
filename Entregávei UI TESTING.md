@@ -26,7 +26,7 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 | CT009 | Ordenação por preço (baixo-alto) | Selecionar opção "Price (low to high)" | Produtos listados em ordem crescente de preço. | ✅ | Passou |  |
 | CT010 | Ordenação por preço (alto-baixo) | Selecionar opção "Price (high to low)" | Produtos listados em ordem decrescente de preço. | ✅ | Passou |  |
 | CT011 | Filtragem por tipo de produto (Backpack) | Selecionar filtro "Backpack" | Apenas produtos do tipo Backpack são exibidos. | ✅ | Passou |  |
-| CT011a | Filtrar por "Sauce Labs Backpack" e ordenar por preço (baixo a alto) | Filtro: "Backpack", Orden: "Price (low to high)" |  Produtos tipo "Sauce Labs Backpack" ordenados de menor a maior preço. | ❌ | Falhou| Possui um ícone de acesso ao filtro, mas não possui a funcionalidade de filtro, em vez disso mostra ordenamento | https://github.com/user-attachments/assets/4652bc7c-9904-444f-8295-2a9df6757c73|
+| CT011a | Filtrar por "Sauce Labs Backpack" e ordenar por preço (baixo a alto) | Filtro: "Backpack", Orden: "Price (low to high)" |  Produtos tipo "Sauce Labs Backpack" ordenados de menor a maior preço. | ❌ | Falhou| Possui um ícone de acesso ao filtro, mas não possui a funcionalidade de filtro, em vez disso mostra ordenamento | 
 | CT011b | Filtrar por "Sauce Labs Backpack" e ordenar por nome (A-Z) | Filtro: "Backpack", Orden: "Name (A to Z)" | Produtos tipo "Sauce Labs Backpack" ordenados alfabeticamente (A-Z). |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a|
 | CT011c | Filtrar por "T-Shirt" e ordenar por preço (alto a baixo) | Filtro: "T-Shirt", Orden: "Price (high to low)" | Produtos tipo "T-Shirt" ordenados de maior a menor preço. |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a |
 | CT011d | Filtrar por "Onesie" e ordenar por nome (Z-A) | Filtro: "Onesie", Orden: "Name (Z to A)" | Produtos tipo "Onesie" ordenados alfabeticamente (Z-A). |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a|
@@ -44,10 +44,10 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 | CT015 | Finalizar a compra (com dados válidos) | Preencher os dados do formulário de checkout com dados válidos. | Pedido finalizado com sucesso, mensagem de confirmação exibida. | ✅ | Passou | |
 | CT015a | Finalizar compra com dados válidos - 1 item | Agregar 1 produto, completar o formulário com dados válidos. | Pedido finalizado, mensagem de confirmação, número de pedido, etc. |  ✅ | Passou  |  | 
 | CT015b | Finalizar compra com dados válidos - múltiplos items | Agregar vários produtos, completar o formulário com dados válidos. | Pedido finalizado, mensagem de confirmação, número de pedido com todos os itens, total correto. |  ✅ | Passou | |
-| CT015c | Finalizar compra com dados inválidos - campos vazios | Agregar um produto, deixar o campo "Nome" vazio. Repita com os outros campos vazios | Mensagem de erro indicando que o campo <nome-campo>" é obrigatório. | ❌ | Falhou | indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente | https://github.com/user-attachments/assets/ab4c1466-49fc-43a9-a07d-69feafc93b55 | 
-| CT015d | Finalizar compra com dados inválidos - código postal inválido | Agregar um produto, inserir código postal inválido. | Mensagem de erro indicando código postal inválido. |❌ | Falhou | aceita qualquer valor ou tipo de caractere como um campo válido | https://github.com/user-attachments/assets/a6d3a721-4dbb-4d03-b171-6857cf22c17c |
+| CT015c | Finalizar compra com dados inválidos - campos vazios | Agregar um produto, deixar o campo "Nome" vazio. Repita com os outros campos vazios | Mensagem de erro indicando que o campo <nome-campo>" é obrigatório. | ❌ | Falhou | indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente | 
+| CT015d | Finalizar compra com dados inválidos - código postal inválido | Agregar um produto, inserir código postal inválido. | Mensagem de erro indicando código postal inválido. |❌ | Falhou | aceita qualquer valor ou tipo de caractere como um campo válido | 
 | CT015e | Interrumpir a compra antes da finalização | Agregar um produto, iniciar a compra e cancelar ou sair. | Nenhum pedido registrado, o carrinho deve manter os itens. |✅ | Passou  |  |
-| CT015f | Comprar com carrinho vazio | Tentar finalizar a compra com o carrinho vazio. | Mensagem indicando que o carrinho está vazio ou que não se podem realizar compras sem itens. |❌ | Falhou | aceitar a transação com o carrinho vazio, validar apenas que carregou os dados do comprador | https://github.com/user-attachments/assets/95a13251-81fa-4f84-806c-32e0ebee0d2b |
+| CT015f | Comprar com carrinho vazio | Tentar finalizar a compra com o carrinho vazio. | Mensagem indicando que o carrinho está vazio ou que não se podem realizar compras sem itens. |❌ | Falhou | aceitar a transação com o carrinho vazio, validar apenas que carregou os dados do comprador | 
 
 
 **1.4 Remoção de itens do carrinho:**
@@ -126,11 +126,22 @@ A maioria dos testes de login, navegação, adição e remoção de itens do car
 **Bugs Encontrados:**
 
 * **CT011a - CT011f (Ordenação e Filtragem):** A funcionalidade de filtragem está ausente ou com defeito. O elemento que parece ser um filtro na verdade ordena os resultados.
+![sim filtro](https://github.com/user-attachments/assets/f74de9d4-7e54-4026-b8e9-252b0b63f019)
+
 * **CT015c (Finalização de Compra):**Finalizar compra com dados inválidos - campos vazios.  indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente.
+![information](https://github.com/user-attachments/assets/757c016d-4ad6-44f6-8555-a85f705c8c0d)
+
 * **CT015d (Finalização de Compra):**  Não há validação do código postal. Qualquer entrada é aceita.
+![zip](https://github.com/user-attachments/assets/65259bff-7ddb-4430-968a-d68a583c40af)
+
 * **CT015f (Finalização de Compra):**  É possível finalizar a compra mesmo com o carrinho vazio.
+![vazio](https://github.com/user-attachments/assets/dc087751-6eab-4949-b351-a0874095f29c)
+  
 * **VT001 - VT003 (Validação de Informação na Tela):**  nome da variável é exibido em vez do nome ou descrição do produto
+![variable](https://github.com/user-attachments/assets/1827ba87-888c-4ae3-b937-a4a22b140b01)
+  
 * **ML003 (Validação menu lateral):**  Existem opções que não possuem funcionalidade ou não possuem acesso a botão de retorno
+![menu](https://github.com/user-attachments/assets/f06f0ca2-8dd5-4c29-9f97-9ea6c65071ba)
 
 
 **Análise de Riscos:**
