@@ -1,5 +1,4 @@
-# Teste-Pratico-QA-Testing
-Prova tecnica QA
+# Orientações Prova tecnica QA
 Você terá de executar e documentar dois tipos de testes:
 1. UI Testing
 2. API Testing
