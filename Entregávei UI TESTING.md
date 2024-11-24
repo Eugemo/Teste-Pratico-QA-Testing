@@ -17,8 +17,6 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 | CT006 | Login com campo password vazio | username: standard_user, password:  | Mensagem de erro indicando campo password obrigatório. | ✅ | Passou |
 
 
-
-
 **1.2 Ordenação e filtragem de produtos:**
 
 | Caso de Teste | Descrição | Dados de Entrada | Resultado Esperado | Resultado Obtido | Status | Notas |
@@ -28,7 +26,7 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 | CT009 | Ordenação por preço (baixo-alto) | Selecionar opção "Price (low to high)" | Produtos listados em ordem crescente de preço. | ✅ | Passou |  |
 | CT010 | Ordenação por preço (alto-baixo) | Selecionar opção "Price (high to low)" | Produtos listados em ordem decrescente de preço. | ✅ | Passou |  |
 | CT011 | Filtragem por tipo de produto (Backpack) | Selecionar filtro "Backpack" | Apenas produtos do tipo Backpack são exibidos. | ✅ | Passou |  |
-| CT011a | Filtrar por "Sauce Labs Backpack" e ordenar por preço (baixo a alto) | Filtro: "Backpack", Orden: "Price (low to high)" |  Produtos tipo "Sauce Labs Backpack" ordenados de menor a maior preço. | ❌ | Falhou| Possui um ícone de acesso ao filtro, mas não possui a funcionalidade de filtro, em vez disso mostra ordenamento
+| CT011a | Filtrar por "Sauce Labs Backpack" e ordenar por preço (baixo a alto) | Filtro: "Backpack", Orden: "Price (low to high)" |  Produtos tipo "Sauce Labs Backpack" ordenados de menor a maior preço. | ❌ | Falhou| Possui um ícone de acesso ao filtro, mas não possui a funcionalidade de filtro, em vez disso mostra ordenamento | https://github.com/user-attachments/assets/4652bc7c-9904-444f-8295-2a9df6757c73|
 | CT011b | Filtrar por "Sauce Labs Backpack" e ordenar por nome (A-Z) | Filtro: "Backpack", Orden: "Name (A to Z)" | Produtos tipo "Sauce Labs Backpack" ordenados alfabeticamente (A-Z). |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a|
 | CT011c | Filtrar por "T-Shirt" e ordenar por preço (alto a baixo) | Filtro: "T-Shirt", Orden: "Price (high to low)" | Produtos tipo "T-Shirt" ordenados de maior a menor preço. |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a |
 | CT011d | Filtrar por "Onesie" e ordenar por nome (Z-A) | Filtro: "Onesie", Orden: "Name (Z to A)" | Produtos tipo "Onesie" ordenados alfabeticamente (Z-A). |❌ | Falhou | não pode ser executado devido ao bloqueio do CP11a|
@@ -46,10 +44,10 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 | CT015 | Finalizar a compra (com dados válidos) | Preencher os dados do formulário de checkout com dados válidos. | Pedido finalizado com sucesso, mensagem de confirmação exibida. | ✅ | Passou | |
 | CT015a | Finalizar compra com dados válidos - 1 item | Agregar 1 produto, completar o formulário com dados válidos. | Pedido finalizado, mensagem de confirmação, número de pedido, etc. |  ✅ | Passou  |  | 
 | CT015b | Finalizar compra com dados válidos - múltiplos items | Agregar vários produtos, completar o formulário com dados válidos. | Pedido finalizado, mensagem de confirmação, número de pedido com todos os itens, total correto. |  ✅ | Passou | |
-| CT015c | Finalizar compra com dados inválidos - campos vazios | Agregar um produto, deixar o campo "Nome" vazio. Repita com os outros campos vazios | Mensagem de erro indicando que o campo <nome-campo>" é obrigatório. | ❌ | Falhou | indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente | 
-| CT015d | Finalizar compra com dados inválidos - código postal inválido | Agregar um produto, inserir código postal inválido. | Mensagem de erro indicando código postal inválido. |❌ | Falhou | aceita qualquer valor ou tipo de caractere como um campo válido |
+| CT015c | Finalizar compra com dados inválidos - campos vazios | Agregar um produto, deixar o campo "Nome" vazio. Repita com os outros campos vazios | Mensagem de erro indicando que o campo <nome-campo>" é obrigatório. | ❌ | Falhou | indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente | https://github.com/user-attachments/assets/ab4c1466-49fc-43a9-a07d-69feafc93b55 | 
+| CT015d | Finalizar compra com dados inválidos - código postal inválido | Agregar um produto, inserir código postal inválido. | Mensagem de erro indicando código postal inválido. |❌ | Falhou | aceita qualquer valor ou tipo de caractere como um campo válido | https://github.com/user-attachments/assets/a6d3a721-4dbb-4d03-b171-6857cf22c17c |
 | CT015e | Interrumpir a compra antes da finalização | Agregar um produto, iniciar a compra e cancelar ou sair. | Nenhum pedido registrado, o carrinho deve manter os itens. |✅ | Passou  |  |
-| CT015f | Comprar com carrinho vazio | Tentar finalizar a compra com o carrinho vazio. | Mensagem indicando que o carrinho está vazio ou que não se podem realizar compras sem itens. |❌ | Falhou | aceitar a transação com o carrinho vazio, validar apenas que carregou os dados do comprador |
+| CT015f | Comprar com carrinho vazio | Tentar finalizar a compra com o carrinho vazio. | Mensagem indicando que o carrinho está vazio ou que não se podem realizar compras sem itens. |❌ | Falhou | aceitar a transação com o carrinho vazio, validar apenas que carregou os dados do comprador | https://github.com/user-attachments/assets/95a13251-81fa-4f84-806c-32e0ebee0d2b |
 
 
 **1.4 Remoção de itens do carrinho:**
@@ -76,8 +74,7 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 |---|---|---|---|---|---|
 | CT021 | Logout | Clicar no botão de logout. | Redirecionamento para a página de login. | ✅ | Passou |  
 
- Vamos adicionar casos de teste para validação da informação mostrada na tela, incluindo um caso de teste falho onde um campo ou nome de variável é mostrado em vez do conteúdo.  Assumiremos que a aplicação tem campos com IDs ou classes CSS para facilitar a localização dos elementos na página.  Se não, os casos de teste precisarão ser adaptados para o método de localização específico da ferramenta de teste utilizada.
-
+ 
 **1.7 Validação de Informação na Tela:**
 
 | Caso de Teste | Descrição | Dados de Entrada | Resultado Esperado | Resultado Obtido | Status | Notas |
@@ -94,7 +91,7 @@ Este documento descreve o plano de testes para a aplicação Sauce Demo, incluin
 |---|---|---|---|---|---|---|
 | ML001 | Abrir o menu lateral | Clicar no ícone/elemento que abre o menu. | Menu lateral aberto, exibindo as opções de navegação. | ✅ | Passou |   |
 | ML002 | Fechar o menu lateral | Clicar no ícone/elemento que fecha o menu, ou clicar fora da área do menu. | Menu lateral fechado, conteúdo principal visível. | ✅ | Passou |  
-| ML003 | Verificar a visibilidade de todos os itens do menu | Abrir o menu lateral. | Todos os itens de menu devem estar visíveis e acessíveis. | ❌ | Falhou | Existem opções que não possuem funcionalidade ou não possuem acesso a botão de retorno |
+| ML003 | Verificar a visibilidade de todos os itens do menu | Abrir o menu lateral. | Todos os itens de menu devem estar visíveis e acessíveis. | ❌ | Falhou | Existem opções que não possuem funcionalidade ou não possuem acesso a botão de retorno | https://github.com/user-attachments/assets/8139a428-10c0-4ac5-8fc4-a13b1c218c10 |
 | ML004 | Testar o menu lateral em diferentes tamanhos de tela | Abrir o menu lateral em diferentes tamanhos de tela (desktop, tablet, mobile) | O menu lateral deve se adaptar ao tamanho da tela e exibir o conteúdo corretamente sem sobreposições ou cortes. |✅ | Passou |  | 
 
 
@@ -123,7 +120,8 @@ A maioria dos testes de login, navegação, adição e remoção de itens do car
 * **Prevenção de Compra com Carrinho Vazio:** Implementar um mecanismo que impeça a finalização de compra se o carrinho estiver vazio.
 * **Tela principal:** em alguns produtos o nome da variável é exibido em vez do nome ou descrição do produto
 * **Menu lateral:** o menu possui opções sem funcionalidade ou que não permitem retornar à tela principal
-
+![Mensagens de erro login](https://github.com/user-attachments/assets/224c64b4-5275-48d6-b6ef-ec81f2b23098)
+![2024-11-24_11h15_45](https://github.com/user-attachments/assets/aec58ba9-a6fe-4375-9fcc-e45c133cbe00)
 
 **Bugs Encontrados:**
 
@@ -145,3 +143,4 @@ A maioria dos testes de login, navegação, adição e remoção de itens do car
 **Conclusão:**
 
 A aplicação Sauce Demo apresenta problemas críticos no fluxo de compra e na funcionalidade de filtragem de produtos.  A correção desses bugs e a implementação das sugestões de melhorias de UX/UI são essenciais antes do lançamento em produção.  Testes adicionais, especialmente de responsividade e segurança, também são fortemente recomendados.
+Nota: A aplicação possui pouca documentação que permita a realização de mais testes, são necessárias informações sobre histórias de usuários ou casos de uso para dar maior cobertura aos testes. Apenas testes smoke foram realizados na aplicação web.
