@@ -126,22 +126,22 @@ A maioria dos testes de login, navegação, adição e remoção de itens do car
 **Bugs Encontrados:**
 
 * **CT011a - CT011f (Ordenação e Filtragem):** A funcionalidade de filtragem está ausente ou com defeito. O elemento que parece ser um filtro na verdade ordena os resultados.
-![sim filtro](https://github.com/user-attachments/assets/f74de9d4-7e54-4026-b8e9-252b0b63f019)
+https://github.com/user-attachments/assets/3bb9f525-70c9-4fea-97a8-1a25f6d76070
 
 * **CT015c (Finalização de Compra):**Finalizar compra com dados inválidos - campos vazios.  indica qual campo está vazio, mas marca em vermelho os campos que foram preenchidos corretamente.
-![information](https://github.com/user-attachments/assets/757c016d-4ad6-44f6-8555-a85f705c8c0d)
+(https://github.com/user-attachments/assets/757c016d-4ad6-44f6-8555-a85f705c8c0d
 
 * **CT015d (Finalização de Compra):**  Não há validação do código postal. Qualquer entrada é aceita.
-![zip](https://github.com/user-attachments/assets/65259bff-7ddb-4430-968a-d68a583c40af)
+https://github.com/user-attachments/assets/65259bff-7ddb-4430-968a-d68a583c40af
 
 * **CT015f (Finalização de Compra):**  É possível finalizar a compra mesmo com o carrinho vazio.
-![vazio](https://github.com/user-attachments/assets/dc087751-6eab-4949-b351-a0874095f29c)
+https://github.com/user-attachments/assets/dc087751-6eab-4949-b351-a0874095f29c
   
 * **VT001 - VT003 (Validação de Informação na Tela):**  nome da variável é exibido em vez do nome ou descrição do produto
-![variable](https://github.com/user-attachments/assets/1827ba87-888c-4ae3-b937-a4a22b140b01)
+https://github.com/user-attachments/assets/1827ba87-888c-4ae3-b937-a4a22b140b01
   
 * **ML003 (Validação menu lateral):**  Existem opções que não possuem funcionalidade ou não possuem acesso a botão de retorno
-![menu](https://github.com/user-attachments/assets/f06f0ca2-8dd5-4c29-9f97-9ea6c65071ba)
+https://github.com/user-attachments/assets/f06f0ca2-8dd5-4c29-9f97-9ea6c65071ba
 
 
 **Análise de Riscos:**
